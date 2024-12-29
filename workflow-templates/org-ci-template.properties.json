@@ -1,6 +1,6 @@
 {
-   "name": "Organization CI Workflow",
-   "description": "DaypeakCode CI Starter Workflow.",
-   "iconName": "octicon organization",
-   "categories": ["Deployment"]
+  "name": "Organization CI Workflow",
+  "description": "DaypeakCode CI Starter Workflow.",
+  "iconName": "octicon organization",
+  "categories": ["Deployment"]
 }
