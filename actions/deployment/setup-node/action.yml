@@ -38,8 +38,10 @@ runs:
         if [ "${{ inputs.clean-install }}" = "true" ]; then
           rm -rf node_modules package-lock.json
           npm install
-        else
+        elif [ -f package-lock.json ]; then
           npm ci
+        else
+          npm install
         fi
 
     - name: Build
