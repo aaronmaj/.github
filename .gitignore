@@ -1,0 +1,15 @@
+./.idea
+.gitignore
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+# Local .terraform directories
+**/.terraform/*
+**/.DS_Store
