@@ -1,8 +1,9 @@
-name: 'Set up Node.js environment'
-description: 'Set up Node.js and install dependencies'
+name: 'Setup Node.js Environment'
+description: 'Sets up Node.js and installs dependencies'
+
 inputs:
   node-version:
-    description: 'The Node.js version to use'
+    description: 'Node.js version to use'
     required: false
     default: '20.x'
   cache:
@@ -10,27 +11,26 @@ inputs:
     required: false
     default: 'npm'
   clean-install:
-    description: 'Whether to perform a clean install of dependencies'
+    description: 'Clean install'
     required: false
     default: 'false'
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Validate cache input
       shell: bash
       run: |
-        if [[ "${{ inputs.cache }}" != 'npm' && "${{ inputs.cache }}" != 'yarn' ]]; then
-          echo "Invalid cache input: ${{ inputs.cache }}"
+        if [[ "${{ inputs.cache }}" != "npm" && "${{ inputs.cache }}" != "yarn" ]]; then
+          echo "Error: cache must be either 'npm' or 'yarn'"
           exit 1
         fi
 
-    - name: Set up Node.js
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
         cache: ${{ inputs.cache }}
-        cache-dependency-path: ${{ github.workspace }}
 
     - name: Install dependencies
       shell: bash
