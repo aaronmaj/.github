@@ -38,9 +38,9 @@ runs:
         if [ "${{ inputs.clean-install }}" = "true" ]; then
           rm -rf node_modules package-lock.json
           npm install
-      
         else
-          npm ci --force
+          npm install
+          npm ci
         fi
 
     - name: Build
