@@ -34,7 +34,10 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: npm install
+      run: |
+        ls -la
+        pwd
+        npm install
 
     - name: Build
       shell: bash
