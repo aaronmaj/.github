@@ -34,14 +34,7 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: |
-        if [ "${{ inputs.clean-install }}" = "true" ]; then
-          rm -rf node_modules package-lock.json
-          npm install
-        else
-          npm install
-          npm ci
-        fi
+      run: npm install
 
     - name: Build
       shell: bash
